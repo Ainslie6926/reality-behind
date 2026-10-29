@@ -24,9 +24,8 @@ type HandTrackerProps = {
   onGestureChange?: (gestures: HandGesture[]) => void
 }
 
-const WASM_URL = 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.2.0/wasm'
-const MODEL_URL =
-  'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task'
+const WASM_URL = '/models/wasm'
+const MODEL_URL = '/models/hand_landmarker.task'
 
 export function HandTracker({ stream, onGestureChange }: HandTrackerProps) {
   const [status, setStatus] = useState('正在加载手部识别…')
