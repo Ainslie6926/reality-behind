@@ -1,0 +1,138 @@
+.experience {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  background: #000;
+  color: #f3f3f3;
+}
+
+.experience__overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.experience__panel {
+  max-width: 560px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.experience__panel h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.experience__intro {
+  position: absolute;
+  top: 18%;
+  max-width: 620px;
+  padding: 22px 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  animation: experience-intro-in 900ms ease both;
+}
+
+.experience__intro h2 {
+  margin: 8px 0 14px;
+  font-family: 'Noto Serif SC', 'STSong', 'SimSun', serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.experience__intro p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.9;
+}
+
+.experience__intro .experience__eyebrow {
+  color: rgba(200, 255, 255, 0.84);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+}
+
+.experience__ending {
+  font-family: 'Noto Serif SC', 'STSong', 'SimSun', serif;
+  font-size: clamp(24px, 3vw, 40px);
+  letter-spacing: 0.16em;
+  text-shadow: 0 3px 28px rgba(0, 0, 0, 0.95);
+}
+
+@keyframes experience-intro-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.experience__panel p {
+  margin: 0;
+  color: rgba(243, 243, 243, 0.78);
+  line-height: 1.6;
+}
+
+.experience__error {
+  color: #ffb4b4;
+}
+
+.experience__controls {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  gap: 12px;
+}
+
+.experience__panel .experience__controls {
+  position: static;
+}
+
+.experience__button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  min-width: 140px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.experience__button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.experience__button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.experience__button--ghost {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 720px) {
+  .experience__controls {
+    position: static;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
