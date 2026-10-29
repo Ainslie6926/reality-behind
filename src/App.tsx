@@ -5,6 +5,7 @@ import type { HandGesture } from './components/HandTracker'
 import { TriangleRevealLayer } from './components/TriangleRevealLayer'
 import { EmotionTracker, type Mood } from './components/EmotionTracker'
 import { SoundManager } from './audio/SoundManager'
+import { IntroSurface } from './components/IntroSurface'
 import './App.css'
 
 type ExperienceStatus = 'idle' | 'requesting' | 'live' | 'stopped' | 'error'
@@ -149,6 +150,7 @@ function App() {
   return (
     <main className="experience">
       <CameraLayer stream={stream} />
+      {status === 'idle' && <IntroSurface onEnter={startCamera} />}
       {status === 'live' && stream && (
         <>
           <TriangleRevealLayer gestures={gestures} mood={mood} />
@@ -158,16 +160,6 @@ function App() {
       )}
 
       <div className="experience__overlay">
-        {status === 'idle' && (
-          <section className="experience__panel">
-            <h1>现实的背面</h1>
-            <p>点击开始后，画面仅在本机全屏显示，不会上传或保存。</p>
-            <button type="button" className="experience__button" onClick={startCamera}>
-              开始体验
-            </button>
-          </section>
-        )}
-
         {status === 'requesting' && (
           <section className="experience__panel">
             <p>正在请求摄像头权限…</p>
